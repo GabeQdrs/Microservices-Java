@@ -31,7 +31,7 @@ public class CurrencyController {
 			@PathVariable String target
 			) throws Exception {
 		CurrencyEntity currency = repository.findBySourceAndTarget(source, target)
-				.orElseThrow(() -> new Exception("Currency not supported"));
+				.orElseThrow(() -> new Exception("Currency Unsupported"));
 		
 		
 		currency.setConvertedValue(value * currency.getConversionRate());
